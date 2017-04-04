@@ -1,0 +1,98 @@
+//@import url(https://fonts.googleapis.com/css?family=Exo+2:400,800,700)
+@font-face
+ font-family: SuperMetroid
+ src: url(https://www.dropbox.com/s/ne7uh5npauy3xfi/SuperMetroidMap.ttf?dl=1)
+
+@mixin keyframes($animationName)
+ @-webkit-keyframes #{$animationName}
+  @content
+ @-moz-keyframes #{$animationName}
+  @content
+ @-o-keyframes #{$animationName}
+  @content
+ @keyframes #{$animationName}
+  @content
+
+@mixin animate($name, $duration, $iteration, $direction, $delay)
+ -webkit-animation-duration: $duration
+ -moz-animation-duration: $duration
+ -o-animation-duration: $duration
+ animation-duration: $duration
+ 
+ -webkit-animation-iteration-count: $iteration
+ -moz-animation-iteration-count: $iteration
+ -o-animation-iteration-count: $iteration
+ animation-iteration-count: $iteration
+ 
+ -webkit-animation-name: $name
+ -moz-animation-name: $name
+ -o-animation-name: $name
+ animation-name: $name
+ 
+ -webkit-animation-direction: $direction
+ -moz-animation-direction: $direction
+ -o-animation-direction: $direction
+ animation-direction: $direction
+ 
+ -webkit-animation-delay: $delay
+ -moz-animation-delay: $delay
+ -o-animation-delay: $delay
+ animation-delay: $delay
+ 
+@include keyframes(metroid)
+ 0%
+  transform: rotate(0deg) translate(-50px, 0px) rotate(0deg)
+  width: 1px
+  height: 1px
+  opacity: 0
+ 40%
+  transform: rotate(-360deg) translate(35px, 35px) rotate(355deg)
+  width: 100px
+  height: 100px
+  opacity: 1
+ 100%
+  transform: rotate(-360deg) translate(35px, 35px) rotate(355deg)
+  width: 100px
+  height: 100px
+  opacity: 1
+
+@mixin metroid
+ @include animate(metroid, 7s, 1, normal, 0s)
+  
+#metroidIMG
+ @include metroid
+ height: 100px
+ width: 100px
+ margin-left: 150px
+ transform: rotate(-360deg) translate(35px, 35px) rotate(355deg)
+ 
+#container
+ height: 100px
+ margin-left: 30px
+ margin-top: 10px
+
+#followerLine
+ margin-left: 50px
+ font-size: 24px
+ font-family: 'SuperMetroid'
+ color: #E9BA1B
+ background-color: #000
+ padding: 5px
+ text-transform: uppercase
+ //center to make it looks nice
+ padding: 20px 20px 20px 10px
+ text-align: center
+ //adjust the box size to username length
+ display: inline-block
+ //specify boundary lengths
+ min-width: 400px
+ max-width: 600px
+
+ 
+#follower
+ padding-top: 3px
+ margin-bottom: 5px
+  
+.followerRow
+ display: inline-block
+ position: relative

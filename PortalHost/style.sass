@@ -1,0 +1,76 @@
+@mixin keyframes($animationName)
+ @-webkit-keyframes #{$animationName}
+  @content
+ @-moz-keyframes #{$animationName}
+  @content
+ @-o-keyframes #{$animationName}
+  @content
+ @keyframes #{$animationName}
+  @content
+
+@mixin animate($name, $duration, $iteration, $direction, $delay)
+ -webkit-animation-duration: $duration
+ -moz-animation-duration: $duration
+ -o-animation-duration: $duration
+ animation-duration: $duration
+ 
+ -webkit-animation-iteration-count: $iteration
+ -moz-animation-iteration-count: $iteration
+ -o-animation-iteration-count: $iteration
+ animation-iteration-count: $iteration
+ 
+ -webkit-animation-name: $name
+ -moz-animation-name: $name
+ -o-animation-name: $name
+ animation-name: $name
+ 
+ -webkit-animation-direction: $direction
+ -moz-animation-direction: $direction
+ -o-animation-direction: $direction
+ animation-direction: $direction
+ 
+ -webkit-animation-delay: $delay
+ -moz-animation-delay: $delay
+ -o-animation-delay: $delay
+ animation-delay: $delay
+ 
+@include keyframes(slidein)
+ 0%
+  margin-left: -60px
+  opacity: 0
+ 40%
+  margin-left: 0px
+  opacity: 1
+ 100%
+  margin-left: 0px
+  opacity: 1
+ 
+@mixin slidein
+ @include animate(slidein, 5s, 1, normal, 0s)
+  
+#container
+ background: transparent
+ display: flex
+ 
+#hostImg1
+ position: relative
+ z-index: 2
+ 
+#hostImg2
+ position: relative
+ left: -5px
+ z-index: 0
+ 
+#hostText
+ z-index: 1
+ @include slidein
+ font-family: 'Arial'
+ font-weight: bold
+ font-size: 30px
+ text-transform: uppercase
+ position:relative
+ padding-top: 65px
+ margin-left: 0px
+ color: white
+ -webkit-text-stroke: 2px #FF5108
+ text-shadow: -1px -1px 0 #FF5108,1px -1px 0 #FF5108,-1px 1px 0 #FF5108,1px 1px 0 #FF5108

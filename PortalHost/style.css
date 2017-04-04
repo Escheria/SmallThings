@@ -1,0 +1,69 @@
+@-webkit-keyframes slidein {
+  0% {
+    margin-left: -60px;
+    opacity: 0;
+  }
+  40% {
+    margin-left: 0px;
+    opacity: 1;
+  }
+  100% {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+@keyframes slidein {
+  0% {
+    margin-left: -60px;
+    opacity: 0;
+  }
+  40% {
+    margin-left: 0px;
+    opacity: 1;
+  }
+  100% {
+    margin-left: 0px;
+    opacity: 1;
+  }
+}
+#container {
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#hostImg1 {
+  position: relative;
+  z-index: 2;
+}
+
+#hostImg2 {
+  position: relative;
+  left: -5px;
+  z-index: 0;
+}
+
+#hostText {
+  z-index: 1;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slidein;
+  animation-name: slidein;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  font-family: "Arial";
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding-top: 65px;
+  margin-left: 0px;
+  color: white;
+  -webkit-text-stroke: 2px #FF5108;
+  text-shadow: -1px -1px 0 #FF5108, 1px -1px 0 #FF5108, -1px 1px 0 #FF5108, 1px 1px 0 #FF5108;
+}
+
